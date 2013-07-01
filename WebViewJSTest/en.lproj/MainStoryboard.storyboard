@@ -1,23 +1,110 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="a47-mi-9EG">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vt3-rF-E1S">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vt3-rF-E1S" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="DTb-BP-oOI"/>
+                            <constraint firstItem="vt3-rF-E1S" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="DdX-f4-9Li"/>
+                            <constraint firstItem="vt3-rF-E1S" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="PZK-Wc-aYo"/>
+                            <constraint firstItem="vt3-rF-E1S" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="sog-lz-Ima"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Mtj-4v-3Gz">
+                        <barButtonItem key="rightBarButtonItem" title="Test" id="Nds-c5-vGl">
+                            <connections>
+                                <action selector="tapTestBtn:" destination="2" id="A6H-dX-q1y"/>
+                                <segue destination="wJh-f7-nS4" kind="push" identifier="nextSegue" id="rSi-r5-Fby"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tvInputHTML" destination="vt3-rF-E1S" id="8Yh-bi-aCD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="48" y="69"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VSL-IX-eRc">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="a47-mi-9EG" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6UI-yx-b67">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="Fh8-aQ-UNX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aM2-cG-48N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-427" y="76"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="70j-OQ-huk">
+            <objects>
+                <viewController storyboardIdentifier="webView" id="wJh-f7-nS4" customClass="WebViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aG3-ri-cQq">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVn-1W-awl">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FVn-1W-awl" firstAttribute="bottom" secondItem="aG3-ri-cQq" secondAttribute="bottom" type="default" id="36M-ka-JYN"/>
+                            <constraint firstItem="FVn-1W-awl" firstAttribute="leading" secondItem="aG3-ri-cQq" secondAttribute="leading" type="default" id="A7V-EZ-BVw"/>
+                            <constraint firstItem="FVn-1W-awl" firstAttribute="top" secondItem="aG3-ri-cQq" secondAttribute="top" type="default" id="RRp-qh-Kjl"/>
+                            <constraint firstItem="FVn-1W-awl" firstAttribute="trailing" secondItem="aG3-ri-cQq" secondAttribute="trailing" type="default" id="T4F-yp-DrV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="tyL-2T-BzP"/>
+                    <connections>
+                        <outlet property="webview" destination="FVn-1W-awl" id="mco-BF-2Hp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xlc-ho-1cI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="477" y="69"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="tapTestBtn:"/>
+                <relationship kind="outlet" name="tvInputHTML" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="WebViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webview" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

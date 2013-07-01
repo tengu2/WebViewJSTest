@@ -18,6 +18,7 @@
 		B45BE7FB178157BB006D7EE3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B45BE7FA178157BB006D7EE3 /* Default-568h@2x.png */; };
 		B45BE7FE178157BB006D7EE3 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45BE7FC178157BB006D7EE3 /* MainStoryboard.storyboard */; };
 		B45BE801178157BB006D7EE3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B45BE800178157BB006D7EE3 /* ViewController.m */; };
+		B45BE80917815904006D7EE3 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B45BE80817815904006D7EE3 /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		B45BE7FD178157BB006D7EE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		B45BE7FF178157BB006D7EE3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B45BE800178157BB006D7EE3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B45BE80717815904006D7EE3 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		B45BE80817815904006D7EE3 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,8 @@
 			isa = PBXGroup;
 			children = (
 				B45BE7F3178157BB006D7EE3 /* AppDelegate.h */,
+				B45BE80717815904006D7EE3 /* WebViewController.h */,
+				B45BE80817815904006D7EE3 /* WebViewController.m */,
 				B45BE7F4178157BB006D7EE3 /* AppDelegate.m */,
 				B45BE7FC178157BB006D7EE3 /* MainStoryboard.storyboard */,
 				B45BE7FF178157BB006D7EE3 /* ViewController.h */,
@@ -176,6 +181,7 @@
 				B45BE7F1178157BB006D7EE3 /* main.m in Sources */,
 				B45BE7F5178157BB006D7EE3 /* AppDelegate.m in Sources */,
 				B45BE801178157BB006D7EE3 /* ViewController.m in Sources */,
+				B45BE80917815904006D7EE3 /* WebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
