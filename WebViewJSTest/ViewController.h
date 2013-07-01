@@ -10,8 +10,11 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextView *inputTextview;
 
-@property (weak, nonatomic) IBOutlet UITextView *tvInputHTML;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *toggle;
 
+@property (strong, nonatomic) NSString *html;
+@property (strong, nonatomic) NSString *script;
 
 @end

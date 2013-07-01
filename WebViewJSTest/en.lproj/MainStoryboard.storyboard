@@ -20,22 +20,27 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vt3-rF-E1S" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="DTb-BP-oOI"/>
                             <constraint firstItem="vt3-rF-E1S" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="DdX-f4-9Li"/>
                             <constraint firstItem="vt3-rF-E1S" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="PZK-Wc-aYo"/>
-                            <constraint firstItem="vt3-rF-E1S" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="sog-lz-Ima"/>
+                            <constraint firstItem="vt3-rF-E1S" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="fD5-wo-6zn"/>
+                            <constraint firstItem="vt3-rF-E1S" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="zQu-jB-aXY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Mtj-4v-3Gz">
+                        <barButtonItem key="leftBarButtonItem" title="HTML" id="Oj5-mP-bjq">
+                            <connections>
+                                <action selector="tapToggle:" destination="2" id="c37-Q9-a10"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Test" id="Nds-c5-vGl">
                             <connections>
-                                <action selector="tapTestBtn:" destination="2" id="A6H-dX-q1y"/>
-                                <segue destination="wJh-f7-nS4" kind="push" identifier="nextSegue" id="rSi-r5-Fby"/>
+                                <segue destination="wJh-f7-nS4" kind="push" identifier="nextSegue" id="vZP-ex-yyz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tvInputHTML" destination="vt3-rF-E1S" id="8Yh-bi-aCD"/>
+                        <outlet property="inputTextview" destination="vt3-rF-E1S" id="AEI-kk-mB6"/>
+                        <outlet property="toggle" destination="Oj5-mP-bjq" id="DfH-SL-fB9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -95,7 +100,9 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
                 <relationship kind="action" name="tapTestBtn:"/>
-                <relationship kind="outlet" name="tvInputHTML" candidateClass="UITextView"/>
+                <relationship kind="action" name="tapToggle:"/>
+                <relationship kind="outlet" name="inputTextview" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="toggle" candidateClass="UIBarButtonItem"/>
             </relationships>
         </class>
         <class className="WebViewController" superclassName="UIViewController">
