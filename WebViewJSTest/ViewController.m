@@ -20,12 +20,24 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
+
     self.script = @"<SCRIPT>\n\n</SCRIPT>";
     self.html = @"<BODY>\n\n</BODY>";
     
-    self.inputTextview.text = self.html;
+
+
+    
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    NSString *ud_html = [ud objectForKey:UD_STORE_HTML];
+    NSString *ud_script = [ud objectForKey:UD_STORE_SCRIPT];
+    
+    if(ud_html != nil) self.html = ud_html;
+    if(ud_script != nil) self.script = ud_script;
+    
+    //set layout
     self.toggle.title = @"HTML";
+    self.inputTextview.text = self.html;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,9 +72,13 @@
         }else{
             self.script = self.inputTextview.text;
         }
+
+        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+        [ud setObject:self.html forKey:UD_STORE_HTML];
+        [ud setObject:self.script forKey:UD_STORE_SCRIPT];
+        [ud synchronize];
         
         NSString *content = [NSString stringWithFormat:@"<HTML><HEAD>%@</HEAD>%@</HTML>", self.script, self.html];
-        
         
         WebViewController *nextViewController = [segue destinationViewController];
         nextViewController.html = content;

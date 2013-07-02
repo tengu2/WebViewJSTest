@@ -6,6 +6,9 @@
 //  Copyright (c) 2013年 jyon. All rights reserved.
 //
 
+#define UD_STORE_HTML @"UD_STORE_HTML"
+#define UD_STORE_SCRIPT @"UD_STORE_SCRIPT"
+
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
